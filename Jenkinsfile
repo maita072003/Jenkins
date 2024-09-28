@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    tools {
+        nodejs 'NodeJS_Installation_Name' // El nombre que definiste en las herramientas globales de Jenkins
+    }
 
     stages {
         stage('Clonar Repositorio') {
