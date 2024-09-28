@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     tools {
         nodejs 'NodeJS_Installation_Name' // El nombre que definiste en las herramientas globales de Jenkins
     }
@@ -10,12 +10,6 @@ pipeline {
             steps {
                 git branch: 'main', url: 'https://github.com/maita072003/Jenkins'
                 sh 'cd hola-mundo'
-            }
-        }
-
-        stage('Ejecutar Pruebas') {
-            steps {
-                sh 'npm test'
             }
         }
 
