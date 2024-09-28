@@ -13,13 +13,6 @@ pipeline {
             }
         }
 
-        stage('Construcción') {
-            steps {
-                echo 'Building...'
-                sh 'npm run build'
-            }
-        }
-
         stage('Despliegue') {
             steps {
                 echo 'Desplegando a producción...'
