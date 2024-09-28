@@ -9,15 +9,16 @@ pipeline {
         stage('Clonar Repositorio') {
             steps {
                 git branch: 'main', url: 'https://github.com/maita072003/Jenkins'
-                sh 'cd hola-mundo'
             }
         }
 
         stage('Despliegue') {
-            steps {
-                echo 'Desplegando a producción...'
-                sh 'npm init -y'
-                sh 'node index.js'
+            steps { 
+                dir('hola-mundo') {
+                    echo 'Desplegando a producción...'
+                    sh 'npm init -y'
+                    sh 'node index.js'
+                }
             }
         }
     }
