@@ -9,6 +9,12 @@ pipeline {
             }
         }
 
+        stage('Instalar Dependencias') {
+            steps {
+                sh 'sudo apt install npm'
+            }
+        }
+
         stage('Ejecutar Pruebas') {
             steps {
                 sh 'npm test'
