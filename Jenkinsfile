@@ -22,7 +22,7 @@ pipeline {
             }
         }
     }
-#hola
+
     post {
         always {
             echo 'Pipeline completado.'
