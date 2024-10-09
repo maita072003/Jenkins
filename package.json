@@ -1,0 +1,4 @@
+"scripts": {
+    "test": "echo \"Running tests...\" && mocha || jest"
+}
+

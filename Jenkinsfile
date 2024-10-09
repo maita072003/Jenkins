@@ -11,7 +11,13 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/maita072003/Jenkins'
             }
         }
-
+	stage('Pruebas') {
+            steps {
+                script {
+                    sh 'npm test'
+                }
+            }
+        }
         stage('Despliegue') {
             steps { 
                 dir('hola-mundo') {
