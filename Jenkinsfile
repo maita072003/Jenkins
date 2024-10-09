@@ -11,6 +11,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/maita072003/Jenkins'
             }
         }
+
+	stage('Instalar Dependencias') {
+	    steps {
+	    	script {
+		    sh 'npm install mocha --save-dev'
+		}
+	    }
+	}
+
 	stage('Pruebas') {
             steps {
                 script {
@@ -18,6 +27,7 @@ pipeline {
                 }
             }
         }
+
         stage('Despliegue') {
             steps { 
                 dir('hola-mundo') {
